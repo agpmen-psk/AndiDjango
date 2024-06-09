@@ -260,7 +260,7 @@
                     <h3><a href="#">{{ el.title }}</a></h3>
                     <div class="date">{{ el.pub_date }} &bullet; от <a href="#">Соседи</a></div>
                     <p>{{ el.preview }}</p>
-                    <p><a href="#" class="readmore">Читать</a></p>
+                    <p><a href="{% url 'news-detail' el.id  %}" class="readmore">Читать</a></p>
                   </div>
                 </div>
               </div>

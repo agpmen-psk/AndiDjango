@@ -1,0 +1,164 @@
+{% load static %}
+<!doctype html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="shortcut icon" href="{% static 'main/img/favicon.png' %}">
+
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,500i,700|Roboto:300,400,500,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'main/css/vendor/icomoon/style.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/vendor/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/vendor/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/vendor/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/vendor/bootstrap.css' %}">
+
+    <!-- Theme Style -->
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+
+    <title>{{ article.title }}</title>
+  </head>
+  <body>
+
+    <div id="agpmen--overlayer"></div>
+    <div class="loader">
+      <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Загрузка...</span>
+      </div>
+    </div>
+
+    <nav class="agpmen--site-mobile-menu">
+      <div class="close-wrap d-flex">
+        <a href="#" class="d-flex ml-auto js-menu-toggle">
+          <span class="close-label">Закрыть</span>
+          <div class="close-times">
+            <span class="bar1"></span>
+            <span class="bar2"></span>
+          </div>
+        </a>
+      </div>
+      <div class="site-mobile-inner"></div>
+    </nav>
+
+
+    <div class="agpmen--site-wrap">
+
+      {% include 'main/nav.html' %}
+
+      <div class="agpmen--site-main">
+
+<style>
+    * {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #606060;
+    font-size: 14px;
+}
+.container_post {
+    margin-top: 50px;
+    max-width: 960px;
+    margin: 50px auto;
+    padding: 0 15px;
+    background: white;
+}
+.post-image img {
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+.post h1 {
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+.post-meta {
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+}
+time,
+.author {
+    padding-right: 26px;
+    position: relative;
+}
+time:after,
+.author:after {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #666;
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+}
+p {
+    line-height: 1.5;
+    margin-bottom: 1em;
+}
+@media (min-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+    .container {
+        padding: 0 45px;
+    }
+    .post-image img {
+        float: right;
+        width: 300px;
+        margin: 0 0 20px 20px;
+    }
+    .post-header {
+        padding-left: 26px;
+        border-left: 4px solid #D8D8D8;
+        margin-left: -30px;
+    }
+}
+</style>
+
+
+        <div class="agpmen--site-section">
+          <div class="container">
+            <div class="container pt-0 pb-5">
+                <div class="container_post">
+    <div class="post">
+        <div class="post-image">
+            <img src="{% static 'main/img/hostel.jpg' %}">
+        </div>
+        <div class="post-content">
+            <div class="post-header">
+                <h1>{{ article.title }}</h1>
+                <div class="post-meta">
+                    <time datetime="2019-04-01">{{ article.pub_date }}</time>
+                    <span class="author">Соседи</span>
+                    <span class="category">Новости</span>
+                </div>
+            </div>
+            <p>{{ article.content }}
+            </p>
+        </div>
+    </div>
+</div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+
+
+      </div>
+
+    {% include 'main/footer.html' %}
+
+  </body>
+</html>

@@ -1,7 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Articles
+from django.views.generic import DetailView
 
+
+class ArticleDetailView(DetailView):
+    model = Articles
+    template_name = 'main/detail_view.html'
+    context_object_name = 'article'
 
 def index(request):
     news = Articles.objects.order_by('-pub_date')[:2]
