@@ -36,3 +36,6 @@ def contacs(request):
 def news(request):
     news = Articles.objects.order_by('-pub_date')
     return render(request, 'main/news.html', {'news': news})
+
+def profile(request):
+    return render(request, 'main/profile.html')

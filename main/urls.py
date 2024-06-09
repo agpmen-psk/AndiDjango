@@ -8,5 +8,6 @@ urlpatterns = [
     path('services', views.services,name='services'),
     path('contacs', views.contacs,name='contacs'),
     path('news', views.news,name='news'),
+    path('profile', views.profile,name='profile'),
     path('news/<int:pk>', views.ArticleDetailView.as_view(),name='news-detail'),
 ]
