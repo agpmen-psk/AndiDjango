@@ -4,10 +4,11 @@ from .models import Articles
 
 
 def index(request):
+    news = Articles.objects.order_by('-pub_date')[:2]
     data = {
         'title': 'Соседи',
     }
-    return render(request, 'main/index.html', data)
+    return render(request, 'main/index.html', {'news': news,'data':data})
 
 
 def about(request):
@@ -27,5 +28,5 @@ def contacs(request):
 
 
 def news(request):
-    news = Articles.objects.all()
+    news = Articles.objects.order_by('-pub_date')
     return render(request, 'main/news.html', {'news': news})
