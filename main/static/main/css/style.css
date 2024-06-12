@@ -2014,3 +2014,10 @@ footer .form-subscribe .form-control:active, footer .form-subscribe .form-contro
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+.user{
+  margin-left: 50px!important;
+}
+.username{
+  margin-right: 5px!important;
+}

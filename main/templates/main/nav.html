@@ -23,29 +23,50 @@
               <li><a href="{% url 'news' %}">Новости</a></li>
               <li><a href="{% url 'about' %}">О нас</a></li>
               <li><a href="{% url 'contacs' %}">Контакты</a></li>
+              {% if user.is_authenticated %}
+                  <li class="has-children user">
+                <a href=""><span class="icon-user username"></span> {{ user.username }}</a>
+                <ul class="dropdown">
+                  <li>
+                    <a href="#">Профиль</a>
+                  </li>
+                    {% if user.is_superuser %}
+                      <li>
+                        <a href="{% url 'admin:index' %}">Панель администратора</a>
+                      </li>
+                    {% endif %}
+                  <li>
+                    <a href="{% url 'logout' %}">Выход</a>
+                  </li>
+                </ul>
+              </li>
+              {% else %}
+                <li class="user"><a href="{% url 'login' %}"><span class="icon-user username"></span> Авторизация</a></li>
+              {% endif %}
             </ul>
           </div>
-          <div class="icons-wrap text-md-right">
 
-            <ul class="icons-top d-none d-lg-block">
-              <li class="mr-4">
-                <a href="#" class="js-search-toggle"><span class="icon-search2"></span></a>
-              </li>
-              <li>
-                <a href="#"><span class="icon-vk"></span></a>
-              </li>
-              <li>
-                <a href="#"><span class="icon-telegram"></span></a>
-              </li>
-              <li>
-                <a href="#"><span class="icon-instagram"></span></a>
-              </li>
-            </ul>
-
-            <!-- Mobile Toggle -->
-            <a href="#" class="d-block d-lg-none burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
-              <span></span>
-            </a>
-          </div>
-        </div>
+{#          <div class="icons-wrap text-md-right">#}
+{##}
+{#            <ul class="icons-top d-none d-lg-block">#}
+{#              <li class="mr-4">#}
+{#                <a href="#" class="js-search-toggle"><span class="icon-search2"></span> {{ user.username }}!</a>#}
+{#              </li>#}
+{#              <li>#}
+{#                <a href="#"><span class="icon-vk"></span></a>#}
+{#              </li>#}
+{#              <li>#}
+{#                <a href="#"><span class="icon-telegram"></span></a>#}
+{#              </li>#}
+{#              <li>#}
+{#                <a href="#"><span class="icon-instagram"></span></a>#}
+{#              </li>#}
+{#            </ul>#}
+{##}
+{#            <!-- Mobile Toggle -->#}
+{#            <a href="#" class="d-block d-lg-none burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">#}
+{#              <span></span>#}
+{#            </a>#}
+{#          </div>#}
+{#        </div>#}
       </nav>

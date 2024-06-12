@@ -1,0 +1,15 @@
+{#{% extends 'blog/base.html' %}#}
+{#{% block title %}Редактирование комментария{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <div class="form-section container mt-3">#}
+{#        <h2>Редактирование комментария</h2>#}
+{#        <form method="post">#}
+{#            {% csrf_token %}#}
+{#            <p>{{ form.comment }}</p>#}
+{#            <button class="btn btn-primary" type="submit">Обновить</button>#}
+{#            <a href="{% url 'news-detail' slug=object.post.slug category_slug=object.post.category.slug %}"#}
+{#               class="btn btn-secondary">Отмена</a>#}
+{#        </form>#}
+{#    </div>#}
+{#{% endblock %}#}

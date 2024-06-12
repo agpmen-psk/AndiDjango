@@ -1,0 +1,38 @@
+{#<!DOCTYPE html>#}
+{#<html lang="en">#}
+{#<head>#}
+{#    <meta charset="UTF-8">#}
+{#    <title>Title</title>#}
+{#</head>#}
+{#<body>#}
+{#<div class="row">#}
+{#    <h2 class="mt-3 mb-3">Добавить комментарий:</h2>#}
+{#    {% if user.is_authenticated %}#}
+{#        <form method="post" enctype="multipart/form-data" action="{% url "add_comment" pk=post.pk %}">#}
+{#            {% csrf_token %}#}
+{#            {{ comment_form.comment }}#}
+{#            <button class="btn btn-outline-warning mt-3" type="submit">Отправить</button>#}
+{#        </form>#}
+{#    {% else %}#}
+{#        <p><a href="{% url 'user_app:login' %}">Войдите</a> чтобы добавить комментарий.</p>#}
+{#    {% endif %}#}
+{#</div>#}
+{##}
+{#<div class="row">#}
+{#    <h2 class="mt-3 mb-3">Комментарии пользователей:</h2>#}
+{#    {% if comments %}#}
+{#        {% for comment in comments %}#}
+{#            <p><a href="{% url 'user_app:user_profile' username=post.author %}">{{ comment.user }}</a>#}
+{#                | {{ comment.created_at }} | {% if comment.user or user.is_superuser %}#}
+{#                    <a href="{% url 'main:edit_comment' comment.pk %}">Редактировать</a> |#}
+{#                    <a href="{% url 'main:delete_comment' comment.pk %}">Удалить</a>#}
+{#                {% endif %}</p>#}
+{#            <p>{{ comment.comment }}</p>#}
+{#            <hr>#}
+{#        {% endfor %}#}
+{#    {% else %}#}
+{#        <p>Нет комментариев</p>#}
+{#    {% endif %}#}
+{#</div>#}
+{#</body>#}
+{#</html>#}

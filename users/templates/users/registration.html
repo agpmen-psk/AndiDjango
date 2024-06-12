@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'main/css/login.css' %}">
+    <title>Вход</title>
+</head>
+<body>
+<div class="form-wrapper">
+    {% if messages %}
+        	{% for message in messages %}
+          	<div class="alert alert-{{ message.tags }}">
+            	{{ message }}
+          	</div>
+        	{% endfor %}
+{% endif %}
+  <h1>Создание аккаунта</h1>
+  <form method="post">
+      {% csrf_token %}
+    <div class="form-item">
+      <label for="email"></label>
+      <input type="text" name="username" required="required" placeholder="Логин"></input>
+    </div>
+    <div class="form-item">
+      <label for="password"></label>
+      <input type="password" name="password1" required="required" placeholder="Пароль"></input>
+    </div>
+      <div class="form-item">
+      <label for="password"></label>
+      <input type="password" name="password2" required="required" placeholder="Повторите пароль"></input>
+    </div>
+    <div class="button-panel">
+      <button class="button">Создать</button>
+    </div>
+  </form>
+  <div class="form-footer">
+    <p><a href="/accounts/login/">Авторизоваться</a></p>
+  </div>
+</div>
+</body>
