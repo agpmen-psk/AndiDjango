@@ -1,4 +1,5 @@
 {% load static %}
+{% load random_image %}
 <!doctype html>
 <html lang="ru">
 
@@ -78,7 +79,7 @@
 
                 <div class="col-md-4">
                 <div class="post-entry" data-aos="fade-up" data-aos-delay="100">
-                  <a href="#" class="thumb"><img src="{% static 'main/img/img_1.jpg' %}" alt="Image" class="img-fluid"></a>
+                  <a href="#" class="thumb"><img src="{{ MEDIA_URL }}{% random_image "" %}" alt="Image" class="img-fluid"></a>
                   <div class="post-entry-contents">
                     <h3><a href="#">{{ el.title }}</a></h3>
                     <div class="date">{{ el.pub_date }} &bullet; от <a href="#">Соседи</a></div>
